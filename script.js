@@ -66,25 +66,6 @@ for(let i=0;i<vineCount;i++){
         i * (vineHeight + gap)
     );
 }
-const path = svg.querySelector(".vine-path");
-
-const p1 = path.getPointAtLength(
-    path.getTotalLength() * 0.35
-);
-
-const p2 = path.getPointAtLength(
-    path.getTotalLength() * 0.65
-);
-
-smallFlower.setAttribute(
-    "transform",
-    `translate(${p1.x} ${p1.y})`
-);
-
-largeFlower.setAttribute(
-    "transform",
-    `translate(${p2.x} ${p2.y})`
-);
 
 garden.style.minHeight =
     (vineCount * (vineHeight + gap)) + "px";
