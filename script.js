@@ -4,9 +4,26 @@ const vineCount = 7;
 const vineHeight = 650;
 const gap = 80;
 
+
 function createVine(top){
 
     const wrapper = document.createElement("div");
+	const svg = wrapper.querySelector("svg");
+	const path = svg.querySelector(".vine-path");
+
+	const totalLength = path.getTotalLength();
+
+	const smallPoint =
+    path.getPointAtLength(totalLength * 0.35);
+
+	const largePoint =
+    path.getPointAtLength(totalLength * 0.70);
+
+	const smallFlower =
+    svg.querySelector(".small-flower");
+
+	const largeFlower =
+    svg.querySelector(".large-flower");
     
     wrapper.className = "vine";
     wrapper.style.top = top + "px";
@@ -51,36 +68,21 @@ wrapper.innerHTML = `
     <ellipse rx="22" ry="95" transform="rotate(120)"/>
     <ellipse rx="22" ry="95" transform="rotate(150)"/>
   </g>
+  
+  
 
 </svg>
 `;
-
-const svg = wrapper.querySelector("svg");
-const path = svg.querySelector(".vine-path");
-
-const totalLength = path.getTotalLength();
-
-const smallPoint =
-    path.getPointAtLength(totalLength * 0.35);
-
-const largePoint =
-    path.getPointAtLength(totalLength * 0.70);
-
-const smallFlower =
-    svg.querySelector(".small-flower");
-
-const largeFlower =
-    svg.querySelector(".large-flower");
-
-smallFlower.setAttribute(
+	smallFlower.setAttribute(
     "transform",
     `translate(${smallPoint.x} ${smallPoint.y}) scale(0)`
-);
+	);
 
-largeFlower.setAttribute(
+	largeFlower.setAttribute(
     "transform",
     `translate(${largePoint.x} ${largePoint.y}) scale(0)`
-);
+	);
+
 
     garden.appendChild(wrapper);
     
@@ -95,3 +97,6 @@ for(let i=0;i<vineCount;i++){
 
 garden.style.minHeight =
     (vineCount * (vineHeight + gap)) + "px";
+
+
+
