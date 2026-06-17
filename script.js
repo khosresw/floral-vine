@@ -1,18 +1,21 @@
 const garden = document.getElementById("garden");
 
 const vineCount = 7;
-const vineHeight = 650;
-const gap = 80;
+const vineHeight = 100;
+const vineDistance = 200;
+const gap = 0;
 
-function createVine(top){
+function createVine(top,left){
 
     const wrapper = document.createElement("div");
     
     wrapper.className = "vine";
     wrapper.style.top = top + "px";
+	wrapper.style.left = left + "px";
 
 wrapper.innerHTML = `
 <svg viewBox="0 0 400 1200">
+
 
   <path
     class="vine-path"
@@ -20,11 +23,12 @@ wrapper.innerHTML = `
       M200 1120
       C140 980 150 860 190 740
       C240 590 240 460 190 330
-      C150 220 170 100 280 20"
+      C150 220 170 100 190 20"
     fill="none"
     stroke="black"
     stroke-width="8"
     stroke-linecap="round"/>
+
 
    <g class="flower small-flower" fill="black">
     ...
@@ -39,59 +43,34 @@ wrapper.innerHTML = `
     <circle r="8" fill="white"/>
   </g>
 
-  <g class="flower large-flower" fill="black">
-    ...
-   </g>
+  
 
-    <circle r="20"/>
-    <ellipse rx="22" ry="95" transform="rotate(0)"/>
-    <ellipse rx="22" ry="95" transform="rotate(30)"/>
-    <ellipse rx="22" ry="95" transform="rotate(60)"/>
-    <ellipse rx="22" ry="95" transform="rotate(90)"/>
-    <ellipse rx="22" ry="95" transform="rotate(120)"/>
-    <ellipse rx="22" ry="95" transform="rotate(150)"/>
-  </g>
 
 </svg>
 `;
 
-const svg = wrapper.querySelector("svg");
-const path = svg.querySelector(".vine-path");
 
-const totalLength = path.getTotalLength();
-
-const smallPoint =
-    path.getPointAtLength(totalLength * 0.35);
-
-const largePoint =
-    path.getPointAtLength(totalLength * 0.70);
-
-const smallFlower =
-    svg.querySelector(".small-flower");
-
-const largeFlower =
-    svg.querySelector(".large-flower");
-
-smallFlower.setAttribute(
-    "transform",
-    `translate(${smallPoint.x} ${smallPoint.y}) scale(0)`
-);
-
-largeFlower.setAttribute(
-    "transform",
-    `translate(${largePoint.x} ${largePoint.y}) scale(0)`
-);
 
     garden.appendChild(wrapper);
+	
     
 }
 
-for(let i=0;i<vineCount;i++){
 
-    createVine(
-        i * (vineHeight + gap)
-    );
+
+for(let vineCount = 0; vineCount < 3; vineCount++) {
+    for(let vineDistance = 0; vineDistance < 7; vineDistance++) {
+
+        createVine(
+            vineCount * 120,
+            vineDistance * 200
+        );
+    }
 }
+
 
 garden.style.minHeight =
     (vineCount * (vineHeight + gap)) + "px";
+
+
+
