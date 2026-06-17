@@ -39,7 +39,7 @@ wrapper.innerHTML = `
   </g>
 
   <g class="flower large-flower"
-     transform="translate(200 980)"
+     transform="translate(200 760)"
      fill="black">
 
     <circle r="20"/>
