@@ -25,10 +25,9 @@ wrapper.innerHTML = `
     stroke-width="8"
     stroke-linecap="round"/>
 
-  /* Small flower */
-    <g class="flower small-flower"
-   transform="translate(205 330)"
-   fill="black">
+  <g class="flower small-flower"
+     transform="translate(195 420)"
+     fill="black">
 
     <circle r="14"/>
     <ellipse rx="18" ry="48" transform="rotate(0)"/>
@@ -39,10 +38,9 @@ wrapper.innerHTML = `
     <circle r="8" fill="white"/>
   </g>
 
-  /* Large flower */
-    <g class="flower large-flower"
-   transform="translate(190 700)"
-   fill="black">
+  <g class="flower large-flower"
+     transform="translate(200 760)"
+     fill="black">
 
     <circle r="20"/>
     <ellipse rx="22" ry="95" transform="rotate(0)"/>
