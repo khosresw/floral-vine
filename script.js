@@ -28,37 +28,37 @@ function createVine(top){
     wrapper.className = "vine";
     wrapper.style.top = top + "px";
 
-	wrapper.innerHTML = `
-	<svg viewBox="0 0 400 1200">
+wrapper.innerHTML = `
+<svg viewBox="0 0 400 1200">
 
-	<path
-		class="vine-path"
-		d="
-		M200 1120
-		C140 980 150 860 190 740
-		C240 590 240 460 190 330
-		C150 220 170 100 280 20"
-		fill="none"
-		stroke="black"
-		stroke-width="8"
-		stroke-linecap="round"/>
+  <path
+    class="vine-path"
+    d="
+      M200 1120
+      C140 980 150 860 190 740
+      C240 590 240 460 190 330
+      C150 220 170 100 280 20"
+    fill="none"
+    stroke="black"
+    stroke-width="8"
+    stroke-linecap="round"/>
 
-	<g class="flower small-flower" fill="black">
+   <g class="flower small-flower" fill="black">
     ...
-	</g>
+   </g>
 
-	<circle r="14"/>
+    <circle r="14"/>
     <ellipse rx="18" ry="48" transform="rotate(0)"/>
     <ellipse rx="18" ry="48" transform="rotate(72)"/>
     <ellipse rx="18" ry="48" transform="rotate(144)"/>
     <ellipse rx="18" ry="48" transform="rotate(216)"/>
     <ellipse rx="18" ry="48" transform="rotate(288)"/>
     <circle r="8" fill="white"/>
-	</g>
+  </g>
 
-	<g class="flower large-flower" fill="black">
+  <g class="flower large-flower" fill="black">
     ...
-	</g>
+   </g>
 
     <circle r="20"/>
     <ellipse rx="22" ry="95" transform="rotate(0)"/>
@@ -67,13 +67,23 @@ function createVine(top){
     <ellipse rx="22" ry="95" transform="rotate(90)"/>
     <ellipse rx="22" ry="95" transform="rotate(120)"/>
     <ellipse rx="22" ry="95" transform="rotate(150)"/>
-	</g>
+  </g>
   
   
 
-	</svg>
-`	;
-	
+</svg>
+`;
+	smallFlower.setAttribute(
+    "transform",
+    `translate(${smallPoint.x} ${smallPoint.y}) scale(0)`
+	);
+
+	largeFlower.setAttribute(
+    "transform",
+    `translate(${largePoint.x} ${largePoint.y}) scale(0)`
+	);
+
+
     garden.appendChild(wrapper);
     
 }
