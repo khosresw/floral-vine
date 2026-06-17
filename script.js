@@ -2,7 +2,7 @@ const garden = document.getElementById("garden");
 
 const vineCount = 7;
 const vineHeight = 650;
-const gap = 0;
+const gap = 80;
 
 function createVine(top){
 
