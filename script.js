@@ -55,6 +55,32 @@ wrapper.innerHTML = `
 </svg>
 `;
 
+const svg = wrapper.querySelector("svg");
+const path = svg.querySelector(".vine-path");
+
+const totalLength = path.getTotalLength();
+
+const smallPoint =
+    path.getPointAtLength(totalLength * 0.35);
+
+const largePoint =
+    path.getPointAtLength(totalLength * 0.70);
+
+const smallFlower =
+    svg.querySelector(".small-flower");
+
+const largeFlower =
+    svg.querySelector(".large-flower");
+
+smallFlower.setAttribute(
+    "transform",
+    `translate(${smallPoint.x} ${smallPoint.y}) scale(0)`
+);
+
+largeFlower.setAttribute(
+    "transform",
+    `translate(${largePoint.x} ${largePoint.y}) scale(0)`
+);
 
     garden.appendChild(wrapper);
     
