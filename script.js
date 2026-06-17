@@ -7,6 +7,7 @@ const gap = 80;
 function createVine(top){
 
     const wrapper = document.createElement("div");
+    
     wrapper.className = "vine";
     wrapper.style.top = top + "px";
 
@@ -25,9 +26,9 @@ wrapper.innerHTML = `
     stroke-width="8"
     stroke-linecap="round"/>
 
-  <g class="flower small-flower"
-     transform="translate(195 420)"
-     fill="black">
+   <g class="flower small-flower" fill="black">
+    ...
+   </g>
 
     <circle r="14"/>
     <ellipse rx="18" ry="48" transform="rotate(0)"/>
@@ -38,9 +39,9 @@ wrapper.innerHTML = `
     <circle r="8" fill="white"/>
   </g>
 
-  <g class="flower large-flower"
-     transform="translate(200 760)"
-     fill="black">
+  <g class="flower large-flower" fill="black">
+    ...
+   </g>
 
     <circle r="20"/>
     <ellipse rx="22" ry="95" transform="rotate(0)"/>
@@ -56,6 +57,7 @@ wrapper.innerHTML = `
 
 
     garden.appendChild(wrapper);
+    
 }
 
 for(let i=0;i<vineCount;i++){
