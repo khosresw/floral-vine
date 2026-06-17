@@ -71,3 +71,6 @@ svg{
         transform:scale(1);
     }
 }
+.flower{
+    transform-origin:center;
+}
