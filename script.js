@@ -45,12 +45,12 @@ function createVine(top) {
 
         <circle r="18" fill="black"/>
 
-        <ellipse rx="35" ry="85" fill="black" transform="rotate(0)"/>
-        <ellipse rx="35" ry="85" fill="black" transform="rotate(30)"/>
-        <ellipse rx="35" ry="85" fill="black" transform="rotate(60)"/>
-        <ellipse rx="35" ry="85" fill="black" transform="rotate(90)"/>
-        <ellipse rx="35" ry="85" fill="black" transform="rotate(120)"/>
-        <ellipse rx="35" ry="85" fill="black" transform="rotate(150)"/>
+        <ellipse rx="20" ry="85" fill="black" transform="rotate(0)"/>
+        <ellipse rx="20" ry="85" fill="black" transform="rotate(30)"/>
+        <ellipse rx="20" ry="85" fill="black" transform="rotate(60)"/>
+        <ellipse rx="20" ry="85" fill="black" transform="rotate(90)"/>
+        <ellipse rx="20" ry="85" fill="black" transform="rotate(120)"/>
+        <ellipse rx="20" ry="85" fill="black" transform="rotate(150)"/>
 
       </g>
 
